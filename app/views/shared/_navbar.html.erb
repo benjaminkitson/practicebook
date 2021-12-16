@@ -1,16 +1,16 @@
 <div class="navbar">
-  <div class="logo">
-    PracticeBook
-  </div>
+
+  <%= link_to root_path do %>
+    <div class="logo">
+      PracticeBook
+    </div>
+  <% end %>
 
   <ul class="navbar-items">
     <li class="navbar-item">Item 1</li>
     <li class="navbar-item">Item 2</li>
     <li class="navbar-item">Item 3</li>
     <% if user_signed_in? %>
-      <li>
-        <%= link_to "Home", "#", class: "navbar-item" %>
-      </li>
       <li>
         <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "navbar-item" %>
       </li>
