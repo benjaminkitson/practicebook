@@ -13,7 +13,23 @@
   </head>
 
   <body>
-    <%= yield %>
-  </body>
+    <div class="navbar-div">
+      <%# <% unless action_name == 'home' %>
+        <%= render 'shared/navbar' %>
+      <%# <% end %>
+    </div>
 
+    <div class="content-div">
+      <%= yield %>
+    </div>
+
+    <div class="footer-div">
+      <% unless action_name == 'home' %>
+        <%= render 'shared/footer' %>
+      <% end %>
+    </div>
+
+      <%= render 'shared/flashes' %>
+
+  </body>
 </html>
