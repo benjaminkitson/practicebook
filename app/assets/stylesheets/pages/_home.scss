@@ -1,1 +1,26 @@
 // Specific CSS for your home-page
+.home-title-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 50vw;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  margin: 50px 4vw;
+  height: 400px;
+  min-height: calc(30vh);
+  padding: 100px 0px;
+}
+
+.home-title {
+  font-size: 80px;
+  font-weight: 300;
+}
+
+.home-phrase {
+  font-size: 20px;
+  text-align: center;
+  font-weight: 300;
+}
