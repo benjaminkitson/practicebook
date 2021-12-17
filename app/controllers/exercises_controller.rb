@@ -1,5 +1,5 @@
 class ExercisesController < ApplicationController
   def index
-    @exercises = Exercise.All
+    @exercises = Exercise.all
   end
 end
