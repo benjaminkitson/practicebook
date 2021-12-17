@@ -3,5 +3,6 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   get '/dashboard', to: 'pages#dashboard', as: 'dashboard'
   resources :exercises, only: [:index, :new, :create, :edit, :update]
+  resources :routine_templates, only: [:index, :new, :create, :edit, :update]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
