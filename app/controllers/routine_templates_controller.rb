@@ -1,0 +1,2 @@
+class RoutineTemplatesController < ApplicationController
+end
