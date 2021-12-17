@@ -1,17 +1,18 @@
-.navbar {
+.footer {
   width: calc(100% - 40px);
-  height: 80px;
+  height: 100px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 30px;
   margin: 0 20px;
-  border-radius: 20px 20px 0 0 ;
-  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
-  margin-bottom: 20px;
+  border-radius:  0 0 20px 20px;
+  border-top: 2px solid rgba(0, 0, 0, 0.1);
+  margin-top: 30px;
+  padding-bottom: 5px;
 }
 
-.navbar-items {
+.footer-items {
   list-style-type: none;
   padding: 0;
   margin: 0;
