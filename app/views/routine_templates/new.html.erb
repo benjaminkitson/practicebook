@@ -1,0 +1,14 @@
+<div class="new-routine-template-container">
+  <div class="heading-div">
+    <div class="routine-templates-container-title">
+      Add a new routine
+    </div>
+  </div>
+  <div class="new-routine-template-form">
+    <%= simple_form_for @routine_template do |f| %>
+      <%= f.input :name %>
+      <%= f.input :description %>
+      <div class="submit-button-div"><%= f.button :submit, "Create routine", class: "primary-button wide" %></div>
+    <% end %>
+  </div>
+</div>
