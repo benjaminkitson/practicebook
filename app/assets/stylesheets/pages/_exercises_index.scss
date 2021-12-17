@@ -1,0 +1,75 @@
+.exercises-containers-div {
+  position: relative;
+  width: 100%;
+  display: flex;
+  height: 100%;
+
+}
+
+.exercises-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100%;
+
+}
+
+.exercises-container.first {
+  width: 60%;
+  margin-left: 30px;
+  padding-right: 15px;
+  border-right: 2px solid rgba(0, 0, 0, 0.1);
+  border-top: 2px solid rgba(0, 0, 0, 0.1);
+  border-radius: 0 20px 0 0;
+}
+
+.exercises-container.second {
+  width: 40%;
+  border-radius: 20px;
+  background-color: #fefaee;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+  padding: 20px 30px;
+  border: 1px solid rgba(0,0,0,0.1);
+  margin-right: 30px;
+  margin-left: 30px;
+}
+
+.exercises-container-title {
+  font-size: 20px;
+}
+
+.exercises-container > .item {
+  padding: 10px;
+  width: calc(100% - 30px);
+  margin: 0px 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  // height: 50px;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+  font-size: 20px;
+  transition: all 0.5s;
+  height: auto;
+}
+
+.item-description {
+  display: none;
+  height: 0;
+  transition: all 0.5s;
+  opacity: 0;
+}
+
+.item:hover .item-description {
+  display: flex;
+  transition: all 0.5s;
+  opacity: 1;
+  font-size: 14px;
+  padding-top: 3px;
+  height: auto;
+}
+
+.item:hover {
+  height: auto;
+}
