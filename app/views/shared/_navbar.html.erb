@@ -7,7 +7,7 @@
   <% end %>
 
   <ul class="navbar-items">
-    <li class="navbar-item">Item 1</li>
+    <li><%= link_to "Dashboard", dashboard_path, class: "navbar-item" %></li>
     <li class="navbar-item">Item 2</li>
     <li class="navbar-item">Item 3</li>
     <% if user_signed_in? %>

@@ -12,6 +12,7 @@
   height: 400px;
   min-height: calc(30vh);
   padding: 50px 0px 80px;
+  border: 1px solid rgba(0,0,0,0.1);
 }
 
 .home-title {
@@ -33,7 +34,8 @@
   height: 50px;
   width: 200px;
   border-radius: 20px;
-  background: green;
+  border: 1px solid rgb(155, 201, 155);
+  background: linear-gradient(rgb(113, 189, 113), rgb(69, 125, 69));
   box-shadow: 0 0 10px rgba(0,0,0,0.2);
   color: white;
   text-align: center;

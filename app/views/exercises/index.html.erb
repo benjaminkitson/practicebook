@@ -1,0 +1,25 @@
+<div class="heading-div">
+  <div class="page-title">
+    MY EXERCISES
+  </div>
+</div>
+
+<div class="exercises-containers-div">
+  <div class="exercises-container first">
+    <% @exercises.each do |exercise| %>
+      <div class="item">
+        <%= exercise.name %>
+          <div class="item-description">
+            <%= exercise.description %>
+          </div>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="exercises-container second">
+    <div class="heading-div">
+      <div class="exercises-container-title">
+      </div>
+    </div>
+  </div>
+</div>
