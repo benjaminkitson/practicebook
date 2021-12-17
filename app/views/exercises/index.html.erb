@@ -18,10 +18,20 @@
 
     <% @exercises.reverse.each do |exercise| %>
       <div class="item">
-        <%= exercise.name %>
+
+        <div class="exercise-index-preview">
+          <%= exercise.name %>
+          <div class="exercise-index-icons">
+            <i class="fas fa-pen"></i>
+            <i class="fas fa-trash"></i>
+            <i class="far fa-caret-down"></i>
+          </div>
+        </div>
+
           <div class="item-description">
             <%= exercise.description %>
           </div>
+
       </div>
     <% end %>
   </div>
