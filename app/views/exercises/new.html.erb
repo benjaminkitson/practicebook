@@ -1,0 +1,16 @@
+<div class="exercises-containers-div">
+  <div class="exercises-container second">
+    <div class="heading-div">
+      <div class="exercises-container-title">
+        Add a new exercise
+      </div>
+    </div>
+    <div class="new-exercise-form">
+      <%= simple_form_for @exercise do |f| %>
+        <%= f.input :name %>
+        <%= f.input :description %>
+        <div class="submit-button-div"><%= f.button :submit, class: "primary-button" %></div>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -12,6 +12,10 @@
 @import "components/index";
 @import "pages/index";
 
+* {
+  color: rgba(0,0,0,0.8)
+}
+
 body {
   display: flex;
   justify-content: center;
@@ -25,8 +29,8 @@ body {
   background-color: #FCF5E5;
   border-radius: 20px;
   box-shadow: 0 0 15px rgba(0,0,0,0.1);
-  margin: 40px;
-  min-height: calc(100vh - 80px);
+  margin: 39px;
+  min-height: calc(100vh - 82px);
   border: 1px solid rgba(0,0,0,0.1);
 }
 
@@ -62,5 +66,5 @@ h1, h2, h3, h4, h5, h6 {
 .page-title {
   margin-left: 90px;
   font-size: 30px;
-  font-weight: 400
+  font-weight: 500;
 }
