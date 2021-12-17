@@ -1,0 +1,46 @@
+<div class="heading-div">
+  <div class="page-title">
+    MY EXERCISES
+  </div>
+
+
+</div>
+
+<div class="routine-templates-containers-div">
+  <div class="routine-templates-container first">
+    <div class="add-routine-template-div">
+      <%= link_to new_routine_template_path do %>
+        <div class="routine-templates-index primary-button">
+          <h6>Add an routine-template</h6>
+        </div>
+      <% end %>
+    </div>
+
+    <% @routine_templates.reverse.each do |routine_template| %>
+      <div class="item">
+
+        <div class="routine-template-index-preview">
+          <%= routine_template.name %>
+          <div class="routine-template-index-icons">
+            <i class="fas fa-pen"></i>
+            <i class="fas fa-trash"></i>
+            <i class="far fa-caret-down"></i>
+          </div>
+        </div>
+
+          <div class="item-description">
+            <%= routine_template.description %>
+          </div>
+
+      </div>
+    <% end %>
+  </div>
+
+  <div class="routine-templates-container second">
+    <div class="heading-div">
+      <div class="routine-templates-container-title">
+        Maybe add new routine-template partial?
+      </div>
+    </div>
+  </div>
+</div>
