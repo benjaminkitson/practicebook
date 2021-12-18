@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_18_123337) do
+ActiveRecord::Schema.define(version: 2021_12_18_124255) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,6 +32,19 @@ ActiveRecord::Schema.define(version: 2021_12_18_123337) do
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "user_id", null: false
     t.index ["user_id"], name: "index_exercises_on_user_id"
+  end
+
+  create_table "routine_exercises", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.integer "duration"
+    t.integer "tempo"
+    t.bigint "routine_template_id", null: false
+    t.bigint "completed_routine_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["completed_routine_id"], name: "index_routine_exercises_on_completed_routine_id"
+    t.index ["routine_template_id"], name: "index_routine_exercises_on_routine_template_id"
   end
 
   create_table "routine_templates", force: :cascade do |t|
@@ -60,5 +73,7 @@ ActiveRecord::Schema.define(version: 2021_12_18_123337) do
 
   add_foreign_key "completed_routines", "users"
   add_foreign_key "exercises", "users"
+  add_foreign_key "routine_exercises", "completed_routines"
+  add_foreign_key "routine_exercises", "routine_templates"
   add_foreign_key "routine_templates", "users"
 end
