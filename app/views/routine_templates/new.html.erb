@@ -36,6 +36,21 @@
   </div>
 
   <div class="new-routine-template-container second">
+    <div class="new-add-exercise primary-button">
+      Add an exercise
+    </div>
+    <% @routine_exercises.reverse.each do |exercise| %>
+      <div class="item">
 
+        <div class="exercise-index-preview">
+          <%= exercise.name %>
+        </div>
+
+          <div class="item-description">
+            <%= exercise.description %>
+          </div>
+
+      </div>
+    <% end %>
   </div>
 </div>

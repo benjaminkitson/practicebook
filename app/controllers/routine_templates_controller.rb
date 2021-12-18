@@ -6,9 +6,11 @@ class RoutineTemplatesController < ApplicationController
   def new
     @routine_template = RoutineTemplate.new
     @exercises = Exercise.all
+    @routine_exercises = RoutineExercise.all
   end
 
   def create
+    @routine_exercises = RoutineExercise.all
     @routine_template = RoutineTemplate.new(routine_template_params)
     @routine_template.user = current_user
     if @routine_template.save
