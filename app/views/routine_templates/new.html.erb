@@ -1,14 +1,37 @@
-<div class="new-routine-template-container">
-  <div class="heading-div">
-    <div class="routine-templates-container-title">
-      Add a new routine
+<div class="new-routine-template-container-div">
+  <div class="new-routine-template-container">
+    <div class="heading-div">
+      <div class="routine-templates-container-title">
+        Add a new routine
+      </div>
+    </div>
+    <div class="new-routine-template-form">
+      <%= simple_form_for @routine_template do |f| %>
+        <%= f.input :name %>
+        <%= f.input :description %>
+        <div class="submit-button-div"><%= f.button :submit, "Create routine", class: "primary-button wide" %></div>
+      <% end %>
     </div>
   </div>
-  <div class="new-routine-template-form">
-    <%= simple_form_for @routine_template do |f| %>
-      <%= f.input :name %>
-      <%= f.input :description %>
-      <div class="submit-button-div"><%= f.button :submit, "Create routine", class: "primary-button wide" %></div>
+
+  <div class="new-routine-template-container">
+    <% @exercises.reverse.each do |exercise| %>
+      <div class="item">
+
+        <div class="exercise-index-preview">
+          <%= exercise.name %>
+          <div class="exercise-index-icons">
+            <i class="fas fa-pen"></i>
+            <i class="fas fa-trash"></i>
+            <i class="far fa-caret-down"></i>
+          </div>
+        </div>
+
+          <div class="item-description">
+            <%= exercise.description %>
+          </div>
+
+      </div>
     <% end %>
   </div>
 </div>
