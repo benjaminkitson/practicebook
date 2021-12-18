@@ -5,6 +5,7 @@ class RoutineTemplatesController < ApplicationController
 
   def new
     @routine_template = RoutineTemplate.new
+    @exercises = Exercise.all
   end
 
   def create
