@@ -12,6 +12,10 @@
   text-align: center;
 }
 
+.primary-button:hover {
+  cursor: pointer;
+}
+
 .primary-button.wide {
   width: 300px;
 }

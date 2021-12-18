@@ -14,3 +14,8 @@ ActiveStorage.start()
 
 import "controllers"
 import "bootstrap"
+import { revealExerciseModal } from '../components/exercise_modal.js'
+
+document.addEventListener('turbolinks:load', () => {
+  revealExerciseModal();
+})
