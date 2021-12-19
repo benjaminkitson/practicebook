@@ -1,7 +1,7 @@
 <div class="modal-div">
   <div class="new-routine-template-container second">
     <% @exercises.reverse.each do |exercise| %>
-      <div class="item" data-name="<%exercise.name%>" data-description="<%exercise.description%>">
+      <div class="item">
 
         <div class="exercise-index-preview">
           <%= exercise.name %>
@@ -12,7 +12,7 @@
           </div>
 
           <div>
-              <i class="fas fa-plus add-item"></i>
+              <i class="fas fa-plus add-item" data-name="<%=exercise.name%>" data-description="<%=exercise.description%>"></i>
           </div>
 
           <%# add event listeners to all of these buttons, add the title and description to the list of exercises for the given routine%>
@@ -46,18 +46,9 @@
     <div class="new-add-exercise primary-button">
       Add an exercise
     </div>
-    <% @routine_exercises.reverse.each do |exercise| %>
-      <div class="item">
-
-        <div class="exercise-index-preview">
-          <%= exercise.name %>
-        </div>
-
-          <div class="item-description">
-            <%= exercise.description %>
-          </div>
-
-      </div>
-    <% end %>
+    <div class="routine-exercises-container">
+    </div>
   </div>
 </div>
+
+<%= javascript_pack_tag 'create_routine', 'data-turbolinks-track': 'reload', defer: true %>

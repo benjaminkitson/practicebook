@@ -16,6 +16,7 @@ import "controllers"
 import "bootstrap"
 import { revealExerciseModal } from '../components/reveal_exercise_modal.js'
 import { hideExerciseModal } from '../components/hide_exercise_modal.js'
+import { addExercise } from '../components/add_exercise.js'
 
 document.addEventListener('turbolinks:load', () => {
   revealExerciseModal();
@@ -23,4 +24,8 @@ document.addEventListener('turbolinks:load', () => {
 
 document.addEventListener('turbolinks:load', () => {
   hideExerciseModal();
+})
+
+document.addEventListener('turbolinks:load', () => {
+  addExercise();
 })
