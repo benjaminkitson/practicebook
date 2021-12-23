@@ -1,3 +1,5 @@
+<%= javascript_pack_tag 'create_routine', 'data-turbolinks-track': 'reload', defer: true %>
+
 <div class="modal-div">
   <div class="new-routine-template-container second">
     <% @exercises.reverse.each do |exercise| %>
@@ -37,7 +39,7 @@
       <%= simple_form_for @routine_template do |f| %>
         <%= f.input :name %>
         <%= f.input :description %>
-        <div class="submit-button-div"><%= f.button :submit, "Create routine", class: "primary-button wide" %></div>
+        <div class="submit-button-div"><%= f.button :submit, "Create routine", class: "primary-button wide create-button" %></div>
       <% end %>
     </div>
   </div>
@@ -50,5 +52,3 @@
     </div>
   </div>
 </div>
-
-<%= javascript_pack_tag 'create_routine', 'data-turbolinks-track': 'reload', defer: true %>

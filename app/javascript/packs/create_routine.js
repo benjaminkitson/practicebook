@@ -17,6 +17,7 @@ import "bootstrap"
 import { revealExerciseModal } from '../components/reveal_exercise_modal.js'
 import { hideExerciseModal } from '../components/hide_exercise_modal.js'
 import { addExercise } from '../components/add_exercise.js'
+import { routineAjax } from '../components/routine_ajax.js'
 
 document.addEventListener('turbolinks:load', () => {
   revealExerciseModal();
@@ -28,4 +29,8 @@ document.addEventListener('turbolinks:load', () => {
 
 document.addEventListener('turbolinks:load', () => {
   addExercise();
+})
+
+document.addEventListener('turbolinks:load', () => {
+  routineAjax();
 })

@@ -16,7 +16,7 @@ class RoutineTemplatesController < ApplicationController
     if @routine_template.save
       redirect_to routine_templates_path
     else
-      render[:new]
+      render :new
     end
   end
 
