@@ -1,7 +1,6 @@
 const hideExerciseModal = () => {
 
   const items = document.querySelectorAll('.add-item');
-  console.log(items)
   const closeButton = document.querySelector('.cancel');
   const exerciseModal = document.querySelector('.modal-div')
 

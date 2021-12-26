@@ -5,7 +5,7 @@
     <% @exercises.reverse.each do |exercise| %>
       <div class="item">
 
-        <div class="exercise-index-preview">
+        <div class="exercise-index-preview" >
           <%= exercise.name %>
         </div>
 
@@ -13,11 +13,12 @@
             <%= exercise.description %>
           </div>
 
-          <div>
-              <i class="fas fa-plus add-item" data-name="<%=exercise.name%>" data-description="<%=exercise.description%>"></i>
+          <div class="add-item" data-description="<%=exercise.description%>" data-name="<%=exercise.name%>">
+              <%= form_with model:@template_exercise, remote: true do |f| %>
+                <%= f.hidden_field :exercise_id, value: exercise.id %>
+                <%= f.submit "+", data: { disable_with: false }  %>
+              <% end %>
           </div>
-
-          <%# add event listeners to all of these buttons, add the title and description to the list of exercises for the given routine%>
 
       </div>
     <% end %>
@@ -49,6 +50,8 @@
       Add an exercise
     </div>
     <div class="routine-exercises-container">
+
     </div>
   </div>
+
 </div>
