@@ -1,3 +1,5 @@
+import { csrfToken } from "@rails/ujs";
+
 const routineAjax = () => {
 
   const createButton = document.querySelector('.create-button');
@@ -13,23 +15,26 @@ const routineAjax = () => {
     const ajaxArray = []
 
     exerciseTexts.forEach(exerciseText => {
-      ajaxArray.push([["routine_exercise[name]", exerciseText.getAttribute("data-e-name")], ["routine_exercise[description]", exerciseText.getAttribute("data-e-description")]])
+      ajaxArray.push(["routine_exercise[name]", exerciseText.getAttribute("data-e-name")], ["routine_exercise[description]", exerciseText.getAttribute("data-e-description")])
     })
 
     console.log(ajaxArray)
     let form = new FormData(createForm)
+    console.log(form)
+    ajaxArray.forEach(element => {form.append(element[0], element[1]) })
     for (const entry of form.entries()) {
       console.log(entry);
     }
-    // fetch(this.formTarget.action, {
-    //   method: 'POST',
-    //   headers: { 'Accept': "application/json", 'X-CSRF-Token': csrfToken() },
-    //   body: new FormData(this.formTarget)
-    // })
-    //   .then(response => response.json())
-    //   .then((data) => {
-    //     console.log(data)
-    //   });
+
+    fetch(createForm.action, {
+      method: 'POST',
+      headers: { 'Accept': "application/json", 'X-CSRF-Token': csrfToken() },
+      body: form
+    })
+      .then(response => response.json())
+      .then((data) => {
+        console.log(data)
+      });
   }
 
   // createButton.addEventListener('click', send)
