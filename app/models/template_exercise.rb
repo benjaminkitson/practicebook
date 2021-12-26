@@ -1,4 +1,4 @@
 class TemplateExercise < ApplicationRecord
-  belongs_to :RoutineTemplate
-  belongs_to :Exercise
+  belongs_to :routine_template
+  belongs_to :exercise
 end
