@@ -27,11 +27,11 @@
         <%= yield %>
       </div>
 
-      <div class="footer-div">
+      <%# <div class="footer-div">
         <% unless action_name == 'home' %>
-          <%= render 'shared/footer' %>
-        <% end %>
-      </div>
+      <%#    <%= render 'shared/footer' %>
+      <%#   <% end %>
+      <%# </div> %>
 
     <% unless action_name == 'home' %>
       <%= render 'shared/flashes' %>
