@@ -3,6 +3,7 @@
   justify-content: center;
   align-items: center;
   height: 50px;
+  min-height: 50px;
   width: 200px;
   border-radius: 20px;
   border: 1px solid rgb(155, 201, 155);
@@ -12,6 +13,10 @@
   text-align: center;
 }
 
+.primary-button:hover {
+  cursor: pointer;
+}
+
 .primary-button.wide {
   width: 300px;
 }
@@ -19,12 +24,18 @@
 
 .exercises-index.primary-button {
   height: 60px;
+  min-height: 60px;
 }
 
 .routine-templates-index.primary-button {
   height: 60px;
   width: 250px;
 }
+
+
+
+
+// Definitely doesnt belong here, move later
 
 .add-exercise-div {
   width: calc(100% - 30px);

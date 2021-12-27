@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_18_124255) do
+ActiveRecord::Schema.define(version: 2021_12_26_142845) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,12 +39,10 @@ ActiveRecord::Schema.define(version: 2021_12_18_124255) do
     t.text "description"
     t.integer "duration"
     t.integer "tempo"
-    t.bigint "routine_template_id", null: false
     t.bigint "completed_routine_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["completed_routine_id"], name: "index_routine_exercises_on_completed_routine_id"
-    t.index ["routine_template_id"], name: "index_routine_exercises_on_routine_template_id"
   end
 
   create_table "routine_templates", force: :cascade do |t|
@@ -54,6 +52,16 @@ ActiveRecord::Schema.define(version: 2021_12_18_124255) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_routine_templates_on_user_id"
+  end
+
+  create_table "template_exercises", force: :cascade do |t|
+    t.bigint "routine_template_id", null: false
+    t.bigint "exercise_id", null: false
+    t.integer "duration"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["exercise_id"], name: "index_template_exercises_on_exercise_id"
+    t.index ["routine_template_id"], name: "index_template_exercises_on_routine_template_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -74,6 +82,7 @@ ActiveRecord::Schema.define(version: 2021_12_18_124255) do
   add_foreign_key "completed_routines", "users"
   add_foreign_key "exercises", "users"
   add_foreign_key "routine_exercises", "completed_routines"
-  add_foreign_key "routine_exercises", "routine_templates"
   add_foreign_key "routine_templates", "users"
+  add_foreign_key "template_exercises", "exercises"
+  add_foreign_key "template_exercises", "routine_templates"
 end

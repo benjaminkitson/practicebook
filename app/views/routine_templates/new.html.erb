@@ -1,9 +1,37 @@
+<%= javascript_pack_tag 'create_routine', 'data-turbolinks-track': 'reload', defer: true %>
+
+<div class="modal-div">
+  <div class="new-routine-template-container second">
+    <% @exercises.reverse.each do |exercise| %>
+      <div class="item">
+
+        <div class="exercise-index-preview" >
+          <%= exercise.name %>
+        </div>
+
+          <div class="item-description">
+            <%= exercise.description %>
+          </div>
+
+          <div class="add-item" data-description="<%=exercise.description%>" data-name="<%=exercise.name%>">
+              <%= form_with model:@template_exercise, remote: true do |f| %>
+                <%= f.hidden_field :exercise_id, value: exercise.id %>
+                <%= f.submit "+", data: { disable_with: false }  %>
+              <% end %>
+          </div>
+
+      </div>
+    <% end %>
+    <div class="cancel primary-button">
+      Cancel
+    </div>
+  </div>
+</div>
+
 <div class="heading-div">
   <div class="page-title">
     CREATE A ROUTINE
   </div>
-
-
 </div>
 
 <div class="new-routine-template-container-div">
@@ -12,24 +40,18 @@
       <%= simple_form_for @routine_template do |f| %>
         <%= f.input :name %>
         <%= f.input :description %>
-        <div class="submit-button-div"><%= f.button :submit, "Create routine", class: "primary-button wide" %></div>
+        <div class="submit-button-div"><%= f.button :submit, "Create routine", class: "primary-button wide create-button" %></div>
       <% end %>
     </div>
   </div>
 
   <div class="new-routine-template-container second">
-    <% @exercises.reverse.each do |exercise| %>
-      <div class="item">
+    <div class="new-add-exercise primary-button">
+      Add an exercise
+    </div>
+    <div class="routine-exercises-container">
 
-        <div class="exercise-index-preview">
-          <%= exercise.name %>
-        </div>
-
-          <div class="item-description">
-            <%= exercise.description %>
-          </div>
-
-      </div>
-    <% end %>
+    </div>
   </div>
+
 </div>
