@@ -1,5 +1,29 @@
-<div><%= @routine_template.name %></div>
+<div class="heading-div">
+  <div class="page-title">
+    <%= @routine_template.name.upcase %>
+  </div>
 
-<% @exercises.each do |exercise|%>
-  <%= exercise.exercise_id %>
-<% end%>
+
+</div>
+  <div class="routine-templates-container first">
+    <div class="add-routine-template-div">
+
+    </div>
+
+    <% @exercises.each do |exercise| %>
+      <div class="item">
+
+        <div class="routine-template-index-preview">
+          <%= exercise.name %>
+          <div class="routine-template-index-icons">
+            <i class="far fa-caret-down"></i>
+          </div>
+        </div>
+
+          <div class="item-description">
+            <%= exercise.description %>
+          </div>
+
+      </div>
+    <% end %>
+  </div>

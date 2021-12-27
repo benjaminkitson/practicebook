@@ -34,7 +34,11 @@ class RoutineTemplatesController < ApplicationController
 
   def show
     @routine_template = RoutineTemplate.find(params[:id])
-    @exercises = TemplateExercise.where(routine_template_id: params[:id])
+    @template_exercises = TemplateExercise.where(routine_template_id: params[:id])
+    @exercises = @template_exercises.map do |t|
+      Exercise.find(t.exercise_id)
+    end
+
   end
 
   def new_template_exercise
