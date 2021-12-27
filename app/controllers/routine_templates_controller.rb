@@ -32,13 +32,15 @@ class RoutineTemplatesController < ApplicationController
     # end
   end
 
+  def show
+    @routine_template = RoutineTemplate.find(params[:id])
+    @exercises = TemplateExercise.where(routine_template_id: params[:id])
+  end
+
   def new_template_exercise
     template_exercise = TemplateExercise.new(routine_exercise_params)
     session[:template_exercises].push(template_exercise)
     @session_exercises = session[:template_exercises]
-  end
-
-  def save_template_exercise
   end
 
   private
