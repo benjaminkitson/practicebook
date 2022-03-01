@@ -10,7 +10,9 @@
     "build": "webpack",
     "dev-server": "webpack-dev-server"
   },
-  "dependencies": {},
+  "dependencies": {
+    "react-router-dom": "4.2.2"
+  },
   "devDependencies": {
     "@babel/cli": "^7.17.6",
     "@babel/core": "^7.17.5",
