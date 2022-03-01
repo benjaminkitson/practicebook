@@ -4,4 +4,4 @@ import './styles/styles.scss';
 
 const app = document.getElementById('app');
 
-ReactDOM.render(<Content/>, app);
+ReactDOM.render(<h1>Hello there!</h1>, app);
