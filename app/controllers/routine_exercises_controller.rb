@@ -1,2 +1,0 @@
-class RoutineExercisesController < ApplicationController
-end

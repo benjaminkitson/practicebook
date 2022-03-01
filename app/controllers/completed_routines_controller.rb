@@ -1,2 +1,0 @@
-class CompletedRoutinesController < ApplicationController
-end
