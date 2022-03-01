@@ -28,6 +28,7 @@ module.exports = {
   devServer: {
     static: {
       directory: buildPath('public')
-    }
+    },
+    historyApiFallback: true
   }
 };
