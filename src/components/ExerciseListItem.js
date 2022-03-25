@@ -1,16 +1,14 @@
 import React from "react";
-import { connect } from "react-redux";
-import { removeExercise } from "../actions/exercises";
+import { Link } from 'react-router-dom';
 
 const ExerciseListItem = ({dispatch, id, title, description, duration}) => (
   <div>
-    <h4>{title}</h4>
+    <Link to={`/edit/${id}`}>
+      <h4>{title}</h4>
+    </Link>
     <h5>{description}</h5>
     <h5>{duration}</h5>
-    <button onClick={() => {
-      dispatch(removeExercise({ id }));
-    }}>Remove</button>
   </div>
 );
 
-export default connect()(ExerciseListItem);
+export default ExerciseListItem;

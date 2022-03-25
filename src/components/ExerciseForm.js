@@ -6,13 +6,19 @@ import { SingleDatePicker } from 'react-dates';
 import "react-dates/lib/css/_datepicker.css";
 
 export default class ExerciseForm extends React.Component {
-  state = {
-    title: '',
-    duration: '',
-    createdAt: moment(),
-    calendarFocused: false,
-    error: undefined
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      title: props.exercise ? props.exercise.title : '',
+      duration: props.exercise ? props.exercise.duration : '',
+      createdAt: props.exercise ? moment(props.exercise.createdAt) : moment(),
+      calendarFocused: false,
+      error: undefined
+    };
+    console.log(props)
+    console.log(this.state);
+  }
+
   onTitleChange = (e) => {
     const title = e.target.value;
     this.setState(() => ({ title }));
