@@ -1,0 +1,1 @@
+A web app to help musicians organise and track their practice! I started work on this initially using Rails - see the commit history - but am now reworking it as a React app with a Node backend, for greater flexibility. 
