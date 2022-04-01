@@ -19,10 +19,10 @@ export default (state = filtersReducerDefault, action) => {
     return { ...state, sortBy: 'duration' };
   }
   case ('START_DATE_FILTER'): {
-    return { ...state, date: action.date };
+    return { ...state, startDate: action.date };
   }
   case ('END_DATE_FILTER'): {
-    return { ...state, date: action.date };
+    return { ...state, endDate: action.date };
   }
   default: {
     return state;
