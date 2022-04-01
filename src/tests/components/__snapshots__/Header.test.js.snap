@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render Header correctly 1`] = `
+<div>
+  <NavLink
+    className={[Function]}
+    to="/"
+  >
+    Home
+  </NavLink>
+  <NavLink
+    className={[Function]}
+    to="/create"
+  >
+    Create
+  </NavLink>
+</div>
+`;
