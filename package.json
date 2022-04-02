@@ -9,7 +9,7 @@
     "server": "live-server public/",
     "build": "webpack",
     "dev-server": "webpack-dev-server",
-    "test": "jest"
+    "test": "jest --config=jest.config.json"
   },
   "dependencies": {
     "@wojtekmaj/enzyme-adapter-react-17": "^0.6.7",
