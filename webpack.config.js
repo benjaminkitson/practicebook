@@ -1,10 +1,14 @@
 const path = require('path');
+const { ContextReplacementPlugin } = require('webpack');
 
 function buildPath(relative) {
   return path.join(__dirname, relative);
 }
 
-module.exports = function() {
+module.exports = function(env) {
+
+  const isProduction = (env.production === true);
+
   return {
     entry: './src/app.js',
     output: {
@@ -25,7 +29,7 @@ module.exports = function() {
         test: /\.s?css$/
       }]
     },
-    devtool: 'eval-cheap-module-source-map',
+    devtool: isProduction ? 'source-map' : 'eval-cheap-module-source-map',
     devServer: {
       static: {
         directory: buildPath('public')
