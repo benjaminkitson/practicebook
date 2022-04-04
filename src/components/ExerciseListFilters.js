@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { DateRangePicker } from 'react-dates';
-import { setTextFilter, sortByDate, sortByDuration, setStartDate, setEndDate } from '../actions/filters';
+import { setTextFilter, sortByDate, sortByDuration, startDateFilter, endDateFilter } from '../actions/filters';
 
 class ExerciseListFilters extends React.Component {
   state = {
@@ -9,8 +9,8 @@ class ExerciseListFilters extends React.Component {
   };
 
   onDatesChange = ({ startDate, endDate }) => {
-    this.props.dispatch(setStartDate(startDate));
-    this.props.dispatch(setEndDate(endDate));
+    this.props.dispatch(startDateFilter(startDate));
+    this.props.dispatch(endDateFilter(endDate));
   };
 
   onFocusChange = (calendarFocused) => {
